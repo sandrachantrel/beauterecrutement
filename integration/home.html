@@ -24,29 +24,113 @@
         </header>
 
         <main class="main-container">
+
             <section class="button">
-
+                <!-- j'utilise la balise a que je stylise en css pour ressembler à un boutton avec "appearance: button" -->
+                <!-- TODO LIENS-->
+                <ul>
+                    <li><a href="TODO lien vers la page de connexion" class="connexion-button"></a></li>
+                    <li><a href="TODO lien vers le formulaire de demande de demmonstration" class="demo-button"></a></li>
+                </ul>
             </section>
+
             <section class="presentation">
-
+                <h2>Logiciel Beauté Recrutement</h2>
+                <p><strong>Beauté Recrutement</strong> est un  logiciel de gestion pour vos recrutements. Simple et intuitif il vous permettra de gagner un temps precieux</p>
             </section>
+
             <section class="features">
+                <h2>Les fonctionnalitées du logiciel</h2>
+                <!-- Création d'onglets avec liens d'ancrage -->
+                <div class="container-features">
+                    <div class="onglets-features">
+                        <div class="onglets active" data-anim="1">test</div>
+                        <div class="onglets" data-anim="2">des</div>
+                        <div class="onglets" data-anim="3">fonctionnalitees</div>
+                    </div>
 
+                    <div class="contenu-features activeContenu" data-anim="1">
+                        <h3>Facil à utiliser</h3>
+                        <hr>
+                        <p>Utilisez Beauté Recrutement pour centraliser et organiser la gestion de vos recrutements et de vos candidats.</p>
+                    </div>
+                
+                    <div class="contenu-features" data-anim="2">
+                        <h3>Tarification flexible</h3>
+                        <hr>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur perspiciatis alias quod, dolores eum illum doloremque assumenda odio architecto, dolorum vitae nobis, quo deleniti ipsum.</p>
+                    </div>
+                
+                    <div class="contenu-features" data-anim="3">
+                        <h3>Sur-mesure</h3>
+                        <hr>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur perspiciatis alias quod, dolores eum illum doloremque assumenda odio architecto, dolorum vitae nobis, quo deleniti ipsum.</p>
+                    </div>
+                </div>
             </section>
+
             <section class="demo-form">
-
+            <!-- Création du formulaire de demande de démo grâce à bootstrap cf site web https://www.w3schools.com/bootstrap4/bootstrap_forms.asp-->
+            <!-- TODO personnaliser formulaire + require bootstrap + voir interaction js -->
+            <form>
+                <div class="form-group row">
+                  <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+                  <div class="col-sm-10">
+                    <input type="email" class="form-control" id="inputEmail3">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+                  <div class="col-sm-10">
+                    <input type="password" class="form-control" id="inputPassword3">
+                  </div>
+                </div>
+                <fieldset class="form-group">
+                  <div class="row">
+                    <legend class="col-form-label col-sm-2 pt-0">Radios</legend>
+                    <div class="col-sm-10">
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                        <label class="form-check-label" for="gridRadios1">
+                          First radio
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                        <label class="form-check-label" for="gridRadios2">
+                          Second radio
+                        </label>
+                      </div>
+                      <div class="form-check disabled">
+                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" disabled>
+                        <label class="form-check-label" for="gridRadios3">
+                          Third disabled radio
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+                <div class="form-group row">
+                  <div class="col-sm-2">Checkbox</div>
+                  <div class="col-sm-10">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="gridCheck1">
+                      <label class="form-check-label" for="gridCheck1">
+                        Example checkbox
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col-sm-10">
+                    <button type="submit" class="btn btn-primary">Sign in</button>
+                  </div>
+                </div>
+              </form>
             </section>
-
-            <strong>Beauté Recrutement est un  logiciel de gestion pour vos recrutements. Simple et intuitif il vous permettra de gagner un temps precieux</strong>
-            <li->
-                <ol>Facile à utliser</ol>
-                <ol>Tarification flexible</ol>
-                <ol>Sur-mesure</ol>
-            </li->
-        
-            <p>Utilisez Beauté Recrutement pour centraliser et organiser la gestion de vos recrutements et de vos candidats.</p>
             
         </main>
+
         <footer>
             <a href="">Mentions Légales</a>
             <a href="">Nous contacter</a>
