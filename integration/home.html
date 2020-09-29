@@ -27,12 +27,12 @@
 
         <main class="main-container">
 
-            <section class="button">
+            <section class="main-button">
                 <!-- j'utilise la balise a que je stylise en css pour ressembler à un boutton avec "appearance: button" -->
                 <!-- TODO LIENS-->
                 <ul>
-                    <li><a href="TODO lien vers la page de connexion" class="connexion-button"></a></li>
-                    <li><a href="TODO lien vers le formulaire de demande de demmonstration" class="demo-button"></a></li>
+                    <li><a class="connexion-button btn btn-primary" href="TODO lien vers la page de connexion" role="button">CONNEXION</a></li>
+                    <li><a class="demo-button btn btn-info" href="TODO lien vers la page de demonstration" role="button">DEMANDER UNE DEMO</a></li>
                 </ul>
             </section>
 
@@ -92,19 +92,53 @@
                 <label for="InputPhoneDemoForm">Téléphone</label>
                 <input type="password" class="form-control" id="InputPhoneDemoForm">
               </div>
-              <button type="submit" class="btn btn-primary">DEMANDER UNE DEMO</button>
+              <button type="submit" class="btn btn-info">DEMANDER UNE DEMO</button>
             </form>
             </section>
             
         </main>
 
         <footer>
-            <a href="">Mentions Légales</a>
-            <a href="">Nous contacter</a>
-            <a href="">Facebook</a>
-            <a href="">Twitter</a>
-            <a href="">LinkedIn</a>
+          <div class="footer-container">
+            <img class="logo" src="../conception/images/logo_facebook.jpg" alt="Logo Beauté Recrutement">
+            <div class="footer-menu">
+              <ul class="footer-menu-list">
+                <li class="menu__item">
+                  <!-- TODO LIENS -->
+                    <a class="menu__link" href="">Accueil</a>
+                </li>
+                <li class="menu__item">
+                    <a class="menu__link" href="">Tarifs</a>
+                </li>
+                <li class="menu__item">
+                    <a class="menu__link" href="">Contact</a>
+                </li>
+              </ul>
+            </div>
+            <div class="footer-button">
+              <ul>
+                <!-- TODO LIENS-->
+                <li><a class="connexion-button btn btn-primary" href="TODO lien vers la page de connexion" role="button">CONNEXION</a></li>
+                <li><a class="demo-button btn btn-info" href="TODO lien vers la page de demonstration" role="button">DEMANDER UNE DEMO</a></li>
+              </ul>
+            </div>
+            <div class="footer-social">
+              <ul class="footer-social-link">
+                <li class="social__item">
+                    <a class="social__link" href="">
+                        <img class="social__icon" src="../conception/images/linkedin-icon.png" alt="LinkedIn Beauté Recrutement">
+                    </a>
+                </li>
+                <li class="social__item">
+                    <a class="social__link" href="">
+                        <img class="social__icon" src="../conception/images/facebook-icon.png" alt="Facebook Beauté Recrutement">
+                    </a>
+                </li>
+              </ul>
+            </div>
+          </div>
         </footer>
+
     </div>
 </body>
 </html>
