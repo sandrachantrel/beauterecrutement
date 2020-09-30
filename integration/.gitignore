@@ -1,0 +1,8 @@
+# Parcel cache directory
+.cache
+
+# Parcel build directory
+dist
+
+# Parcel node modules
+node_modules
