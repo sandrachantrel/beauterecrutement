@@ -4,5 +4,5 @@
 # Parcel build directory
 dist
 
-# Parcel node modules
+# NPM Package Directory
 node_modules

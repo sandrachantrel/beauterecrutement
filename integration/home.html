@@ -8,66 +8,57 @@
     <title>Beauté Recrutement</title>
 
 </head>
-<body>
-    <div class="container">
+<body class="home">
 
-        <header class="header-container">
+        <header class="header">
             <img class="logo" src="../conception/images/logo_facebook.jpg" alt="Logo Beauté Recrutement">
-            <nav class="header-nav">
-                <a href="">Accueil</a>
-                <a href="">Tarifs</a>
-                <a href="">Contact</a>
-                <a href="../integration/login.html">Espace Recruteurs</a>
+            <nav class="menu">
+                <a class="menu__link" href="">Accueil</a>
+                <a class="menu__link" href="">Tarifs</a>
+                <a class="menu__link" href="">Contact</a>
+                <a class="menu__link" href="../integration/login.html">Espace Recruteurs</a>
             </nav>
-            <div class="header-text-container">
+            <div class="content">
                 <span class="first-part">Et si le recrutement commençait ici?</span>
                 <span class="second-part">Logiciel RH pour les entreprises du Bien-Être et de la Beauté</span>
             </div>
         </header>
 
-        <main class="main-container">
+        <main class="main">
 
-            <section class="main-button">
+            <section class="button">
                 <!-- j'utilise la balise a que je stylise en css pour ressembler à un boutton avec "appearance: button" -->
+                <!-- Utilisation de bootstrap pour le visuel des boutons -->
                 <!-- TODO LIENS-->
-                <ul>
-                    <li><a class="connexion-button btn btn-primary" href="../integration/login.html" role="button">CONNEXION</a></li>
-                    <li><a class="demo-button btn btn-info" href="TODO lien vers la page de demonstration" role="button">DEMANDER UNE DEMO</a></li>
+                <ul class="button__list">
+                    <li class="button__item"><a class="button__link-connexion btn btn-primary" href="../integration/login.html" role="button">CONNEXION</a></li>
+                    <li class="button__item"><a class="button__link-demo btn btn-info" href="TODO lien vers la page de demonstration" role="button">DEMANDER UNE DEMO</a></li>
                 </ul>
             </section>
 
             <section class="presentation">
-                <h2>Logiciel Beauté Recrutement</h2>
-                <p><strong>Beauté Recrutement</strong> est un  logiciel de gestion pour vos recrutements. Simple et intuitif il vous permettra de gagner un temps precieux</p>
+                <h2 class="presentation__title">Logiciel Beauté Recrutement</h2>
+                <p class="presentation__content"><strong>Beauté Recrutement</strong> est un  logiciel de gestion pour vos recrutements. Simple et intuitif il vous permettra de gagner un temps precieux</p>
             </section>
 
             <section class="features">
-                <h2>Les fonctionnalitées du logiciel</h2>
-                <!-- Création d'onglets avec liens d'ancrage -->
-                <div class="container-features">
-                    <div class="onglets-features">
-                        <div class="onglets active" data-anim="1">test</div>
-                        <div class="onglets" data-anim="2">des</div>
-                        <div class="onglets" data-anim="3">fonctionnalitees</div>
-                    </div>
-
-                    <div class="contenu-features activeContenu" data-anim="1">
-                        <h3>Facil à utiliser</h3>
-                        <hr>
-                        <p>Utilisez Beauté Recrutement pour centraliser et organiser la gestion de vos recrutements et de vos candidats.</p>
-                    </div>
-                
-                    <div class="contenu-features" data-anim="2">
-                        <h3>Tarification flexible</h3>
-                        <hr>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur perspiciatis alias quod, dolores eum illum doloremque assumenda odio architecto, dolorum vitae nobis, quo deleniti ipsum.</p>
-                    </div>
-                
-                    <div class="contenu-features" data-anim="3">
-                        <h3>Sur-mesure</h3>
-                        <hr>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur perspiciatis alias quod, dolores eum illum doloremque assumenda odio architecto, dolorum vitae nobis, quo deleniti ipsum.</p>
-                    </div>
+                <!-- Element Bootstrap card pour presentation des fonctionnalitées  -->
+                <div class="card">
+                  <div class="card-header">
+                    Les fonctionnalitées du logiciel
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">Simple</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">Rapide</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">Tarif flexible</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                  </div>
                 </div>
             </section>
 
@@ -95,14 +86,14 @@
               <button type="submit" class="btn btn-info">DEMANDER UNE DEMO</button>
             </form>
             </section>
-            
+
         </main>
 
         <footer>
-          <div class="footer-container">
+          <div class="footer">
             <img class="logo" src="../conception/images/logo_facebook.jpg" alt="Logo Beauté Recrutement">
-            <div class="footer-menu">
-              <ul class="footer-menu-list">
+            <div class="menu">
+              <ul class="menu__list">
                 <li class="menu__item">
                   <!-- TODO LIENS -->
                     <a class="menu__link" href="">Accueil</a>
@@ -115,15 +106,15 @@
                 </li>
               </ul>
             </div>
-            <div class="footer-button">
-              <ul>
+            <div class="button">
+              <ul class="button__list">
                 <!-- TODO LIENS-->
-                <li><a class="connexion-button btn btn-primary" href="../integration/login.html" role="button">CONNEXION</a></li>
-                <li><a class="demo-button btn btn-info" href="TODO lien vers la page de demonstration" role="button">DEMANDER UNE DEMO</a></li>
+                <li class="button__item"><a class="button__link-connexion btn btn-primary" href="../integration/login.html" role="button">CONNEXION</a></li>
+                <li class="button__item"><a class="button__link-demo btn btn-info" href="TODO lien vers la page de demonstration" role="button">DEMANDER UNE DEMO</a></li>
               </ul>
             </div>
-            <div class="footer-social">
-              <ul class="footer-social-link">
+            <div class="social">
+              <ul class="social__list">
                 <li class="social__item">
                     <a class="social__link" href="">
                         <img class="social__icon" src="../conception/images/linkedin-icon.png" alt="LinkedIn Beauté Recrutement">
@@ -139,7 +130,6 @@
           </div>
         </footer>
 
-    </div>
     <script src="./js/main.js"></script>
 </body>
 </html>
