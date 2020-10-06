@@ -1,12 +1,14 @@
 <template>
     <header class="header">
-        <section class="header__elements">
-        <img class="logo" src="@/assets/logo_facebook.jpg" alt="Logo Beauté Recrutement">
+        <section class="header-elements">
+        <img class="logo-header" src="@/assets/cover_facebook.jpg" alt="Logo Beauté Recrutement">
         <nav class="menu">
-            <a class="menu__link" href="">Accueil</a>
-            <a class="menu__link" href="">Tarifs</a>
-            <a class="menu__link" href="">Contact</a>
-            <a class="menu__link" href="../integration/login.html">Espace Recruteurs</a>
+            <ul class="menu-list">
+                <li class="menu-link"><a class="links" href="">Accueil</a></li>
+                <li class="menu-link"><a class="links" href="">Tarifs</a></li>
+                <li class="menu-link"><a class="links" href="">Contact</a></li>
+                <li class="menu-link"><a class="links" href="">Espace Recruteurs</a></li>
+            </ul>
         </nav>
         </section>
         <div class="content">
@@ -22,6 +24,66 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
+@import '@/scss/colors.scss';
 
+// Logo
+
+.logo-header 
+{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+// Menu 
+
+.menu {
+    text-align: center;
+}
+.menu-list {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+
+}
+.menu-link {
+    padding: 1rem;
+}
+.links {
+    text-decoration: none;
+    color: $color-primary;
+    padding: 0.2rem;
+    font-size: 1.5rem;
+    font-family: "Montserrat Bold" , Arial;
+}
+.links:hover {
+    background-color: rgba($color-primary, 0.5);
+    color: $color-text-primary;
+    transition: 0.4s;
+    border-radius: 0.5rem;
+}
+
+@media only screen and (max-width: 767px) {
+    .menu-list {
+        height: 230px;
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+// Slogan 
+
+.content {
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    text-align: center;
+
+}
+.first-part, second-part {
+    padding: 1rem;
+}
 </style>
