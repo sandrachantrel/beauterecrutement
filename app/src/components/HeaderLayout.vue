@@ -1,7 +1,7 @@
 <template>
     <header class="header">
         <section class="header__elements">
-        <img class="logo" src="/images/logo_facebook.jpg" alt="Logo Beauté Recrutement">
+        <img class="logo" src="@/assets/logo_facebook.jpg" alt="Logo Beauté Recrutement">
         <nav class="menu">
             <a class="menu__link" href="">Accueil</a>
             <a class="menu__link" href="">Tarifs</a>
