@@ -46,6 +46,7 @@ export default {
     list-style-type: none;
     display: flex;
     justify-content: center;
+    margin: 0;
     padding: 0;
 
 }
@@ -54,9 +55,10 @@ export default {
 }
 .links {
     text-decoration: none;
+    text-transform: uppercase;
     color: $color-primary;
     padding: 0.2rem;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-family: "Montserrat Bold" , Arial;
 }
 .links:hover {
