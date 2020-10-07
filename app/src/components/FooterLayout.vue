@@ -63,7 +63,16 @@
 
 <script>
 export default {
-    name: "FotterLayout"
+    name: "FotterLayout",
+    data () {
+      return {
+        menuItems: [
+          "Accueil",
+          "Tarifs",
+          "Contact"
+        ]
+      }
+    }
 };
 </script>
 
@@ -77,79 +86,93 @@ export default {
   align-items: center;
   justify-content: center;
 
-}
-// Logo 
+  // Logo 
 
-.logo-footer {
-    width: 70px;
-    height: 70px;
-    border-radius: 3rem;
-}
+  .logo-footer {
+      width: 70px;
+      height: 70px;
+      border-radius: 3rem;
+  }
 
-// Menu
+  // Menu
 
-.menu-list {
-    list-style-type: none;
+  .menu-list {
+      list-style-type: none;
+      display: flex;
+      justify-content: center;
+      margin: 0;
+      padding: 0;
 
-}
-.menu-link {
-  padding: 3px;
-}
-.links {
-    text-decoration: none;
-    text-transform: uppercase;
-    color: $color-primary;
-    padding: 0.1rem;
-    font-size: 1rem;
+  }
+  .menu-link {
+    padding: 3px;
+  }
+  .links {
+      text-decoration: none;
+      text-transform: uppercase;
+      color: $color-primary;
+      padding: 0.1rem;
+      font-size: 90%;
+      font-family: "Montserrat Bold" , Arial;
+  }
+  .links:hover {
+      background-color: rgba($color-primary, 0.5);
+      color: $color-text-primary;
+      transition: 0.4s;
+      border-radius: 0.5rem;
+  }
+
+  @media only screen and (max-width: 767px) {
+        .menu-list {
+            height: 230px;
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+
+  // Boutons
+
+  .button-list {
+    font-size: 100%;
     font-family: "Montserrat Bold" , Arial;
-}
-.links:hover {
-    background-color: rgba($color-primary, 0.5);
-    color: $color-text-primary;
-    transition: 0.4s;
-    border-radius: 0.5rem;
-}
+    list-style-type: none;
+    display: flex;
+    padding: 0;
+  }
 
-// Boutons
+  .button-link-connexion, 
+  .button-link-demo {
+    text-decoration: none;
+    color: $color-text-secondary;
+    border-radius: 0.2rem;
+    padding: 0.5rem;
+    margin: 0.5rem;
+  }
 
-.button-list {
-  font-size: 1.5vmax;
-  font-family: "Montserrat Bold" , Arial;
-  list-style-type: none;
-  display: flex;
-  padding: 0;
-}
+  .button-link-connexion {
+    background-color: rgb(0, 81, 255);
+  }
 
-.button-link-connexion, 
-.button-link-demo {
-  text-decoration: none;
-  color: $color-text-secondary;
-  border-radius: 0.2rem;
-  padding: 0.5rem;
-  margin: 0.5rem;
-}
+  .button-link-demo {
+    background-color: rgba(4, 142, 160, 0.61);
+  }
 
-.button-link-connexion {
-  background-color: rgb(0, 81, 255);
-}
+  // Social
 
-.button-link-demo {
-  background-color: rgba(4, 142, 160, 0.61);
-}
+  .social-list {
+    list-style-type: none;
+    display: flex;
+    padding: 0;
+  }
 
-// Social
+  .social-icon {
+    width: 30px;
+    height: 30px;
+    margin: 0.5rem;
+  }
 
-.social-list {
-  list-style-type: none;
-  display: flex;
-  padding: 0;
 }
 
-.social-icon {
-  width: 30px;
-  height: 30px;
-  margin: 0.5rem;
-}
 
 
 </style>
