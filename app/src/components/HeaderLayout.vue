@@ -8,13 +8,11 @@
       />
       <nav class="menu">
         <ul class="menu-list">
-          <li class="menu-link"><a class="links" href="">Accueil</a></li>
-          <li class="menu-link"><a class="links" href="">Offres</a></li>
-          <li class="menu-link"><a class="links" href="">Tarifs</a></li>
-          <li class="menu-link"><a class="links" href="">Contact</a></li>
-          <li class="menu-link">
-            <a class="links" href="">Espace Recruteurs</a>
-          </li>
+          <li class="menu-link"><a class="links" href="http://localhost:8080/#/">Accueil</a></li>
+          <li class="menu-link"><a class="links" href="http://localhost:8080/#/offres">Offres</a></li>
+          <!-- <li class="menu-link"><a class="links" href="">Tarifs</a></li>
+          <li class="menu-link"><a class="links" href="">Contact</a></li> -->
+          <li class="menu-link"><a class="links" href="http://localhost:8080/#/connexion">Espace Recruteurs</a></li>
         </ul>
       </nav>
     </section>

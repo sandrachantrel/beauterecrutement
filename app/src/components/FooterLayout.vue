@@ -26,7 +26,7 @@
           <li class="button-item">
             <a
               class="button-link-connexion btn btn-primary"
-              href="../integration/login.html"
+              href="http://localhost:8080/#/connexion"
               role="button"
               >CONNEXION</a
             >
