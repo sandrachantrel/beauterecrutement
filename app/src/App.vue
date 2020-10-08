@@ -1,21 +1,21 @@
 <template>
   <div id="app">
     <HeaderLayout />
-    <HomeLayout />
+    <OfferList />
     <FooterLayout />
   </div>
 </template>
 
 <script>
 import HeaderLayout from "./components/HeaderLayout";
-import HomeLayout from "./components/HomeLayout";
+import OfferList from "./components/OfferList";
 import FooterLayout from "./components/FooterLayout";
 
 export default {
   name: "App",
   components: {
     HeaderLayout,
-    HomeLayout,
+    OfferList,
     FooterLayout
   }
 };

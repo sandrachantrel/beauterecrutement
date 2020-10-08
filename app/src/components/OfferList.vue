@@ -6,18 +6,17 @@
       J'envoie les informations de l'objet offer généré avec ma boucle v-for dans les différents props du composant OfferExcerpt
       -->
       <OfferExcerpt
-        v-for="offer in offers"
-        v-bind:key="offer.id"
+        v-for="(offer, index) in offers"
+        v-bind:key="index"
         v-bind:id="offer.id"
         v-bind:title="offer.title.rendered"
         v-bind:excerpt="offer.excerpt.rendered"
-        v-bind:imageId="offer.featured_media"
-        v-bind:imageSource="offer.featured_media_source_url"
       />
     </div>
 </template>
 
 <script>
+import axios from "axios";
 import OfferExcerpt from "@/components/OfferExcerpt.vue";
 
 export default {
@@ -28,14 +27,26 @@ export default {
   data() {
     return {
       offers: [],
-      types: [],
-      localisations: [],
-      jobs: []
-    };
+    }
   },
-}
+
+    // Mounted permet d'effectuer un traitement au chargement de mon composant dans le DOM
+  mounted() {
+    let promise = axios.get("http://localhost/apotheose/Projet-beaute-recrutement-back/wp-json/wp/v2/offers");
+
+    promise.then( response => {
+      this.offers = response.data
+    });
+
+    promise.catch(error => {
+      console.log(error);
+    });
+  }
+};
 </script>
 
-<style>
+<style lang="scss">
+@import "@/scss/variables.scss";
+@import "@/scss/colors.scss";
 
 </style>
