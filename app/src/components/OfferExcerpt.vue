@@ -4,8 +4,8 @@
         v-bind:title="title">
         <div class="text-content">
             <h2>{{ title }}</h2>
-            <div>
-                {{ excerpt }}
+            <!-- v-html permet d'interpreter le code html pour éviter l'affichage des balises-->
+            <div v-if="excerpt" v-html="excerpt">
             </div>
         </div>
       </a>
