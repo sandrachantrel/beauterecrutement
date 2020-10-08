@@ -11,6 +11,8 @@
         v-bind:id="offer.id"
         v-bind:title="offer.title.rendered"
         v-bind:excerpt="offer.excerpt.rendered"
+        v-bind:imageId="offer.featured_media"
+        v-bind:imageSource="offer.featured_media_source_url"
       />
     </div>
 </template>
@@ -48,5 +50,9 @@ export default {
 <style lang="scss">
 @import "@/scss/variables.scss";
 @import "@/scss/colors.scss";
+
+h1 {
+  text-align: center;
+}
 
 </style>
