@@ -1,28 +1,31 @@
 <template>
   <footer>
     <div class="footer">
-      <img
-        class="logo-footer"
-        src="@/assets/logo_facebook.jpg"
-        alt="Logo Beauté Recrutement"
-      />
+      <a href="http://localhost:8080/#/">
+        <img
+          class="logo-footer"
+          src="@/assets/logo_facebook.jpg"
+          alt="Logo Beauté Recrutement"
+        />
+      </a>
       <div class="menu">
         <ul class="menu-list">
           <li class="menu-link">
-            <!-- TODO LIENS -->
-            <a class="links" href>Accueil</a>
+            <a class="links" href="http://localhost:8080/#/">Accueil</a>
           </li>
           <li class="menu-link">
-            <a class="links" href>Tarifs</a>
+            <a class="links" href="http://localhost:8080/#/offres">Offres</a>
           </li>
+          <!-- <li class="menu-link">
+            <a class="links" href="">Tarifs</a>
+          </li> 
           <li class="menu-link">
-            <a class="links" href>Contact</a>
-          </li>
+            <a class="links" href="">Contact</a>
+          </li> -->
         </ul>
       </div>
       <div class="button">
         <ul class="button-list">
-          <!-- TODO LIENS-->
           <li class="button-item">
             <a
               class="button-link-connexion btn btn-primary"
@@ -34,7 +37,7 @@
           <li class="button-item">
             <a
               class="button-link-demo btn btn-info"
-              href="TODO lien vers la page de demonstration"
+              href="http://localhost:8080/#/demo"
               role="button"
               >DEMANDER UNE DEMO</a
             >
@@ -44,7 +47,7 @@
       <div class="social">
         <ul class="social-list">
           <li class="social-item">
-            <a class="social-link" href>
+            <a class="social-link" href="https://fr.linkedin.com/company/beaut%C3%A9-recrutement">
               <img
                 class="social-icon"
                 src="@/assets/linkedin-icon.png"
@@ -53,7 +56,7 @@
             </a>
           </li>
           <li class="social-item">
-            <a class="social-link" href>
+            <a class="social-link" href="https://www.facebook.com/beauterecrutement/">
               <img
                 class="social-icon"
                 src="@/assets/facebook-icon.png"
@@ -87,13 +90,15 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 2rem;
 
   // Logo
 
   .logo-footer {
-    width: 70px;
-    height: 70px;
+    width: 50px;
+    height: 50px;
     border-radius: 3rem;
+    padding:1rem;
   }
 
   // Menu

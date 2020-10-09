@@ -3,7 +3,7 @@
     <section class="header-elements">
       <img
         class="logo-header"
-        src="@/assets/cover_facebook.jpg"
+        src="@/assets/logo_couleur.jpg"
         alt="Logo Beauté Recrutement"
       />
       <nav class="menu">
@@ -32,8 +32,8 @@ export default {
   // Logo
 
   .logo-header {
-    width: 100%;
-    height: 100%;
+    width: 50%;
+    height: 50%;
     margin: 0;
     padding: 0;
   }
