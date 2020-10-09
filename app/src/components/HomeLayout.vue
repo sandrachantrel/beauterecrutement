@@ -120,12 +120,13 @@ export default {
   .content {
     display: flex;
     flex-direction: column;
-    font-size: 150%;
+    font-size: 130%;
     text-align: center;
+    margin: 1.5rem;
   }
   .first-part,
-  second-part {
-    padding: 1rem;
+  .second-part {
+    padding: 0.5rem;
   }
 
   // Boutons
@@ -144,7 +145,7 @@ export default {
     color: $color-text-secondary;
     border-radius: 0.2rem;
     padding: 0.5rem;
-    margin: 0.5rem;
+    margin: 1rem;
   }
 
   .button-link-connexion {
@@ -153,6 +154,23 @@ export default {
 
   .button-link-demo {
     background-color: rgba(4, 142, 160, 0.61);
+  }
+
+  // Contenu
+
+  .presentation {
+    margin: 2rem;
+  }
+
+  // Formulaire
+
+  .btn-info,
+  .form-group {
+    margin: 1rem;
+  }
+
+  .form-group label {
+    margin: 1rem;
   }
 }
 </style>
