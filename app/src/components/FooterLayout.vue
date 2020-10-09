@@ -1,49 +1,33 @@
 <template>
   <footer>
     <div class="footer">
-      <a href="http://localhost:8080/#/">
+      <RouterLink v-bind:to="{name: 'Home' }" >
         <img
           class="logo-footer"
           src="@/assets/logo_facebook.jpg"
           alt="Logo Beauté Recrutement"
         />
-      </a>
-      <div class="menu">
-        <ul class="menu-list">
-          <li class="menu-link">
-            <a class="links" href="http://localhost:8080/#/">Accueil</a>
-          </li>
-          <li class="menu-link">
-            <a class="links" href="http://localhost:8080/#/offres">Offres</a>
-          </li>
-          <!-- <li class="menu-link">
-            <a class="links" href="">Tarifs</a>
-          </li> 
-          <li class="menu-link">
-            <a class="links" href="">Contact</a>
-          </li> -->
-        </ul>
-      </div>
-      <div class="button">
-        <ul class="button-list">
-          <li class="button-item">
-            <a
-              class="button-link-connexion btn btn-primary"
-              href="http://localhost:8080/#/connexion"
-              role="button"
-              >CONNEXION</a
-            >
-          </li>
-          <li class="button-item">
-            <a
-              class="button-link-demo btn btn-info"
-              href="http://localhost:8080/#/demo"
-              role="button"
-              >DEMANDER UNE DEMO</a
-            >
-          </li>
-        </ul>
-      </div>
+      </RouterLink>
+      <RouterLink tag="aRouter" 
+      exact :style="{ cursor: 'pointer'}" 
+      v-bind:to="{name: 'Home' }">
+      Accueil
+      </RouterLink>
+      <RouterLink tag="aRouter" 
+      exact :style="{ cursor: 'pointer'}" 
+      v-bind:to="{name: 'Offres' }">
+      Offres
+      </RouterLink>
+
+      <RouterLink tag="buttonconnexion" 
+      exact :style="{ cursor: 'pointer'}" 
+      v-bind:to="{name: 'Login' }">
+      Connexion</RouterLink>
+      <RouterLink tag="buttondemo" 
+      exact :style="{ cursor: 'pointer'}" 
+      v-bind:to="{name: 'Demo' }">
+      Demande de démo</RouterLink>
+
       <div class="social">
         <ul class="social-list">
           <li class="social-item">
@@ -103,25 +87,16 @@ export default {
 
   // Menu
 
-  .menu-list {
-    list-style-type: none;
-    display: flex;
-    justify-content: center;
-    margin: 0;
-    padding: 0;
-  }
-  .menu-link {
-    padding: 3px;
-  }
-  .links {
+  aRouter {
     text-decoration: none;
     text-transform: uppercase;
     color: $color-primary;
-    padding: 0.1rem;
+    padding: 0.2rem;
+    margin: 0.2rem;
     font-size: 90%;
     font-family: "Montserrat Bold", Arial;
   }
-  .links:hover {
+  aRouter:hover {
     background-color: rgba($color-primary, 0.5);
     color: $color-text-primary;
     transition: 0.4s;
@@ -138,29 +113,23 @@ export default {
 
   // Boutons
 
-  .button-list {
-    font-size: 100%;
-    font-family: "Montserrat Bold", Arial;
-    list-style-type: none;
-    display: flex;
-    padding: 0;
-  }
-
-  .button-link-connexion,
-  .button-link-demo {
+  buttonconnexion {
     text-decoration: none;
     color: $color-text-secondary;
+    background-color: $color-button-connexion;
+    border: none;
     border-radius: 0.2rem;
     padding: 0.5rem;
     margin: 0.5rem;
   }
-
-  .button-link-connexion {
-    background-color: rgb(0, 81, 255);
-  }
-
-  .button-link-demo {
-    background-color: rgba(4, 142, 160, 0.61);
+  buttondemo {
+    text-decoration: none;
+    color: $color-text-secondary;
+    background-color: $color-button-demo;
+    border: none;
+    border-radius: 0.2rem;
+    padding: 0.5rem;
+    margin: 0.5rem;
   }
 
   // Social

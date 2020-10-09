@@ -6,29 +6,18 @@
         >Logiciel RH pour les entreprises du Bien-Être et de la Beauté</span
       >
     </section>
-    <section class="button">
-      <!-- j'utilise la balise a que je stylise en css pour ressembler à un boutton avec "appearance: button" -->
-      <!-- Utilisation de bootstrap pour le visuel des boutons -->
-      <!-- TODO LIENS-->
-      <ul class="button-list">
-        <li class="button-item">
-          <a
-            class="button-link-connexion btn btn-primary"
-            href="http://localhost:8080/#/connexion"
-            role="button"
-            >CONNEXION</a
-          >
-        </li>
-        <li class="button-item">
-          <a
-            class="button-link-demo btn btn-info"
-            href="http://localhost:8080/#/demo"
-            role="button"
-            >DEMANDER UNE DEMO</a
-          >
-        </li>
-      </ul>
-    </section>
+    
+    <div class="button-list">
+      <RouterLink tag="buttonconnexion" 
+      exact :style="{ cursor: 'pointer'}" 
+      v-bind:to="{name: 'Login' }">
+      Connexion</RouterLink>
+      <RouterLink tag="buttondemo" 
+      exact :style="{ cursor: 'pointer'}" 
+      v-bind:to="{name: 'Demo' }">
+      Demande de démo</RouterLink>
+    </div>
+    
 
     <section class="presentation">
       <p class="presentation-content">
@@ -110,21 +99,23 @@ export default {
     padding: 0;
   }
 
-  .button-link-connexion,
-  .button-link-demo {
+  buttonconnexion {
     text-decoration: none;
     color: $color-text-secondary;
+    background-color: $color-button-connexion;
+    border: none;
     border-radius: 0.2rem;
     padding: 0.5rem;
-    margin: 1rem;
+    margin: 0.5rem;
   }
-
-  .button-link-connexion {
-    background-color: rgb(0, 81, 255);
-  }
-
-  .button-link-demo {
-    background-color: rgba(4, 142, 160, 0.61);
+  buttondemo {
+    text-decoration: none;
+    color: $color-text-secondary;
+    background-color: $color-button-demo;
+    border: none;
+    border-radius: 0.2rem;
+    padding: 0.5rem;
+    margin: 0.5rem;
   }
 
   // Contenu

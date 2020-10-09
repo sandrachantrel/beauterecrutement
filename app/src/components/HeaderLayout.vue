@@ -7,13 +7,9 @@
         alt="Logo Beauté Recrutement"
       />
       <nav class="menu">
-        <ul class="menu-list">
-          <li class="menu-link"><a class="links" href="http://localhost:8080/#/">Accueil</a></li>
-          <li class="menu-link"><a class="links" href="http://localhost:8080/#/offres">Offres</a></li>
-          <!-- <li class="menu-link"><a class="links" href="">Tarifs</a></li>
-          <li class="menu-link"><a class="links" href="">Contact</a></li> -->
-          <li class="menu-link"><a class="links" href="http://localhost:8080/#/connexion">Espace Recruteurs</a></li>
-        </ul>
+        <RouterLink tag="a" v-bind:to="{name: 'Home' }">Accueil</RouterLink>
+        <RouterLink tag="a" v-bind:to="{name: 'Offres' }">Offres</RouterLink>
+        <RouterLink tag="a" v-bind:to="{name: 'Login' }">Espace Recruteur</RouterLink>
       </nav>
     </section>
   </header>
@@ -41,27 +37,20 @@ export default {
   // Menu
 
   .menu {
-    text-align: center;
-  }
-  .menu-list {
-    list-style-type: none;
     display: flex;
     justify-content: center;
-    margin: 0;
-    padding: 0;
   }
-  .menu-link {
-    padding: 1rem;
-  }
-  .links {
+  
+  a {
     text-decoration: none;
     text-transform: uppercase;
     color: $color-primary;
-    padding: 0.2rem;
     font-size: 120%;
     font-family: "Montserrat Bold", Arial;
+    padding: 0.2rem;
+    margin: 1rem;
   }
-  .links:hover {
+  a:hover {
     background-color: rgba($color-primary, 0.5);
     color: $color-text-primary;
     transition: 0.4s;
@@ -69,10 +58,10 @@ export default {
   }
 
   @media only screen and (max-width: 767px) {
-    .menu-list {
-      height: 230px;
+    .menu {
       flex-direction: column;
       text-align: center;
+      margin: 0rem;
     }
   }
 }

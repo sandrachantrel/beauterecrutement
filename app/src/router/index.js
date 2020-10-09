@@ -20,12 +20,12 @@ const routes = [
   },
   {
     path: "/connexion",
-    name: "Espace Recruteurs",
+    name: "Login",
     component: Login
   },
   {
     path: "/demo",
-    name: "Demande de démonstration",
+    name: "Demo",
     component: Demo
   }
 ];
