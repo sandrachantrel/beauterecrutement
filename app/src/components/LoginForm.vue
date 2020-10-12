@@ -4,16 +4,19 @@
         <form>
         <fieldset>
             <div class="field">
-            <label class="field__label">Adresse e-mail</label>
+            <label for="email" class="field__label">Adresse e-mail</label>
+            <!-- J'associe mon champ email à ma data grace à v-model -->
             <input
+                v-model="email"
                 class="field__input"
                 type="text"
                 placeholder="Votre e-mail"
             />
             </div>
             <div class="field field--error">
-            <label class="field__label">Mot de passe</label>
+            <label for="password" class="field__label">Mot de passe</label>
             <input
+                v-model="password"
                 class="field__input"
                 type="password"
                 placeholder="Votre mot de passe"
@@ -28,10 +31,15 @@
 
 <script>
 export default {
-
-}
+    name: "LoginForm",
+    // création de mes datas qui vont etre liées à mes champs avec v-model
+    data() {
+        return {
+            email: "",
+            password: ""
+        }
+    }
+};
 </script>
 
-<style>
-
-</style>
+<style></style>
