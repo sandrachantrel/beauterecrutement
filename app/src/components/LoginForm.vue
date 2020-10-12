@@ -70,7 +70,11 @@ export default {
     },
     methods: {
         submit() {
-            console.log("submit", this.email, this.password, this.validate());
+            let isValide = this.validate();
+
+            if (isValide) {
+                console.log(this.email, this.password);
+            }
         },
 
         // Méthode me permettant de valider les champs du formulaire de connexion 
