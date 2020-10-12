@@ -1,7 +1,8 @@
 <template>
     <div class="loginForm">
         <h1>Connexion</h1>
-        <form>
+        <!-- J'ajoute un écouteur d'événement de type submit avec preventDefault -->
+        <form v-on:submit.prevent="submit()">
         <fieldset>
             <div class="field">
             <label for="email" class="field__label">Adresse e-mail</label>
@@ -37,6 +38,11 @@ export default {
         return {
             email: "",
             password: ""
+        }
+    },
+    methods: {
+        submit() {
+            console.log("submit", this.email, this.password);
         }
     }
 };
