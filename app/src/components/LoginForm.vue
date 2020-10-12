@@ -55,6 +55,8 @@
 </template>
 
 <script>
+import TokenService from "@/services/TokenService.js";
+
 export default {
     name: "LoginForm",
     // création de mes datas qui vont etre liées à mes champs avec v-model
@@ -73,7 +75,9 @@ export default {
             let isValide = this.validate();
 
             if (isValide) {
-                console.log(this.email, this.password);
+                let tokenRequest = TokenService.get(this.email, this.password);
+
+                console.log(tokenRequest);
             }
         },
 
