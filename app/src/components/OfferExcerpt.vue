@@ -10,13 +10,16 @@
         <h2>{{ title }}</h2>
         <!-- v-html permet d'interpreter le code html pour éviter l'affichage des balises-->
         <div v-if="excerpt" v-html="excerpt"></div>
+        <div>Type de contrat: {{  }}</div>
+        <div>Localisation: {{  }}</div>
+
       </div>
     </a>
   </article>
 </template>
 
 <script>
-import axios from "axios";
+import MediaService from "@/services/MediaService.js";
 
 export default {
   name: "OfferExcerpt",
@@ -50,24 +53,23 @@ export default {
   },
   methods: {
     getImage() {
+      // Je recupére seulement les infos de l'image s'il y a une image sinon je ne fait pas
       if (this.imageId) {
-        let imageRequest = axios.get(
-          "http://localhost/apotheose/Projet-beaute-recrutement-back/wp-json/wp/v2/media/" +
-            this.imageId
-        );
+        // Requete http pour recuperer les infos de l'image 
+        let imageRequest = MediaService.get(this.imageId);
 
         imageRequest.then(response => {
-          // J'enregistre les informations reçues de l'API dans une data de mon composant
           this.image = response.data;
         });
 
-        imageRequest.then(error => {
+        imageRequest.catch(error => {
           console.log(error);
         });
       }
     }
   },
   created() {
+    // A la création de l'instance du composant je récupére les infos de l'image 
     this.getImage();
   }
 };

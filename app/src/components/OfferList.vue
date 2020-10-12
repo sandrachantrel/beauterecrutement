@@ -18,8 +18,12 @@
 </template>
 
 <script>
-import axios from "axios";
 import OfferExcerpt from "@/components/OfferExcerpt.vue";
+
+import OfferService from "@/services/OfferService.js";
+import TypeService from "@/services/TypeService.js";
+import LocalisationService from "@/services/LocalisationService.js";
+import JobService from "@/services/JobService.js";
 
 export default {
   name: "OfferList",
@@ -31,20 +35,68 @@ export default {
   data() {
     return {
       offers: [],
+      types: [],
+      localisations: [],
+      jobs: []
     };
   },
 
-  // Mounted permet d'effectuer un traitement au chargement de mon composant dans le DOM
   mounted() {
-    let promise = axios.get(
-      "http://localhost/apotheose/Projet-beaute-recrutement-back/wp-json/wp/v2/offers"
-    );
-    promise.then(response => {
-      this.offers = response.data;
-    });
-    promise.catch(error => {
-      console.log(error);
-    });
+    // Au chargement du DOM => appel à l'API pour recuperer la liste des offres, types, ingredients et jobs
+    this.getOffers();
+    this.getTypes();
+    this.getLocalisations();
+    this.getJobs();
+  },
+
+  methods: {
+    getOffers() {
+      let promise = OfferService.list();
+
+      promise.then(response => {
+        this.offers = response.data;
+      });
+
+      promise.catch(error => {
+        console.log(error);
+      });
+    },
+
+    getTypes() {
+      let promise = TypeService.list();
+
+      promise.then(response => {
+        this.types = response.data;
+      });
+
+      promise.catch(error => {
+        console.log(error);
+      });
+    },
+
+    getLocalisations() {
+      let promise = LocalisationService.list();
+
+      promise.then(response => {
+        this.localisations = response.data;
+      });
+
+      promise.catch(error => {
+        console.log(error);
+      });
+    },
+
+    getJobs() {
+      let promise = JobService.list();
+
+      promise.then(response => {
+        this.jobs = response.data;
+      });
+
+      promise.catch(error => {
+        console.log(error);
+      });
+    }
   }
 };
 </script>
