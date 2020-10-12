@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="scss/main.scss">
+    <title>Beauté Recrutement</title>
+
+</head>
+<body>
+    <div class="container">
+
+        <header class="header-container">
+            <img class="logo" src="../conception/images/logo_facebook.jpg" alt="Logo Beauté Recrutement">
+            <nav class="header-nav">
+                <a href="">Accueil</a>
+                <a href="">Tarifs</a>
+                <a href="">Contact</a>
+                <a href="">Espace Recruteurs</a>
+            </nav>
+            <div class="header-text-container">
+                <span class="title-page">Contact</span>
+            </div>
+        </header>
+
+        <main class="main-container">
+
+            <section class="contact-presentation">
+                <h2>Logiciel Beauté Recrutement</h2>
+                <p><strong>Beauté Recrutement</strong> est un  logiciel de gestion pour vos recrutements. Simple et intuitif il vous permettra de gagner un temps precieux</p>
+            </section>
+            
+            <section class="contact-information">
+                <p>Adresse</p>
+                <p>Téléphone</p>
+                <p>Email</p>
+            </section>     
+            
+            <section class="contact-form">
+                <!-- Création du formulaire de contact grâce à bootstrap -->
+                <!-- TODO personnaliser formulaire + voir interaction js -->
+                <form>
+                  <h2>Entrons en contact</h2>
+                  <div class="form-group">
+                    <label for="InputNameContactForm">Nom</label>
+                    <input type="name" class="form-control" id="InputNameContactForm">
+                  </div>
+                  <div class="form-group">
+                    <label for="InputEmailContactForm">Email</label>
+                    <input type="email" class="form-control" id="InputEmailContactForm">
+                  </div>
+                  <div class="form-group">
+                    <label for="ContactFormTextarea">Votre message</label>
+                    <textarea class="form-control" id="ContactFormTextarea" rows="3"></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-info">ENVOYER</button>
+                </form>
+            </section>
+        </main>
+
+        <footer>
+          <div class="footer-container">
+            <img class="logo" src="../conception/images/logo_facebook.jpg" alt="Logo Beauté Recrutement">
+            <div class="footer-menu">
+              <ul class="footer-menu-list">
+                <li class="menu__item">
+                  <!-- TODO LIENS -->
+                    <a class="menu__link" href="">Accueil</a>
+                </li>
+                <li class="menu__item">
+                    <a class="menu__link" href="">Tarifs</a>
+                </li>
+                <li class="menu__item">
+                    <a class="menu__link" href="">Contact</a>
+                </li>
+              </ul>
+            </div>
+            <div class="footer-button">
+              <ul>
+                <!-- TODO LIENS-->
+                <li><a class="connexion-button btn btn-primary" href="TODO lien vers la page de connexion" role="button">CONNEXION</a></li>
+                <li><a class="demo-button btn btn-info" href="TODO lien vers la page de demonstration" role="button">DEMANDER UNE DEMO</a></li>
+              </ul>
+            </div>
+            <div class="footer-social">
+              <ul class="footer-social-link">
+                <li class="social__item">
+                    <a class="social__link" href="">
+                        <img class="social__icon" src="../conception/images/linkedin-icon.png" alt="LinkedIn Beauté Recrutement">
+                    </a>
+                </li>
+                <li class="social__item">
+                    <a class="social__link" href="">
+                        <img class="social__icon" src="../conception/images/facebook-icon.png" alt="Facebook Beauté Recrutement">
+                    </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </footer>
+
+    </div>
+</body>
+</html>

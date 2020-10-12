@@ -1,0 +1,8 @@
+# Parcel cache directory
+.cache
+
+# Parcel build directory
+dist
+
+# NPM Package Directory
+node_modules

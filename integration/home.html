@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="scss/main.scss">
+    <title>Beauté Recrutement</title>
+
+</head>
+<body class="home">
+
+        <header class="header">
+          <section class="header__elements">
+            <img class="logo" src="/images/logo_facebook.jpg" alt="Logo Beauté Recrutement">
+            <nav class="menu">
+                <a class="menu__link" href="">Accueil</a>
+                <a class="menu__link" href="">Tarifs</a>
+                <a class="menu__link" href="">Contact</a>
+                <a class="menu__link" href="../integration/login.html">Espace Recruteurs</a>
+            </nav>
+          </section>
+          <div class="content">
+              <span class="first-part">Et si le recrutement commençait ici?</span>
+              <span class="second-part">Logiciel RH pour les entreprises du Bien-Être et de la Beauté</span>
+          </div>
+        </header>
+
+        <main class="main">
+
+            <section class="button">
+                <!-- j'utilise la balise a que je stylise en css pour ressembler à un boutton avec "appearance: button" -->
+                <!-- Utilisation de bootstrap pour le visuel des boutons -->
+                <!-- TODO LIENS-->
+                <ul class="button__list">
+                    <li class="button__item"><a class="button__link-connexion btn btn-primary" href="../integration/login.html" role="button">CONNEXION</a></li>
+                    <li class="button__item"><a class="button__link-demo btn btn-info" href="TODO lien vers la page de demonstration" role="button">DEMANDER UNE DEMO</a></li>
+                </ul>
+            </section>
+
+            <section class="presentation">
+                <h2 class="presentation__title">Logiciel Beauté Recrutement</h2>
+                <p class="presentation__content"><strong>Beauté Recrutement</strong> est un  logiciel de gestion pour vos recrutements. Simple et intuitif il vous permettra de gagner un temps precieux</p>
+            </section>
+
+            <section class="features">
+                <!-- Element Bootstrap card pour presentation des fonctionnalitées  -->
+                <div class="card">
+                  <div class="card-header">
+                    Les fonctionnalitées du logiciel
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">Simple</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">Rapide</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">Tarif flexible</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                  </div>
+                </div>
+            </section>
+
+            <section class="demo-form">
+            <!-- Création du formulaire de demande de démo grâce à bootstrap cf site web https://www.w3schools.com/bootstrap4/bootstrap_forms.asp-->
+            <!-- TODO personnaliser formulaire + voir interaction js -->
+            <form>
+              <h2>Prêt à découvrir Beauté Recrutement ?</h2>
+              <div class="form-group">
+                <label for="InputNameDemoForm">Nom</label>
+                <input type="name" class="form-control" id="InputNameDemoForm">
+              </div>
+              <div class="form-group">
+                <label for="InputFirstNameDemoForm">Prénom</label>
+                <input type="firtsname" class="form-control" id="InputFirstNameDemoForm">
+              </div>
+              <div class="form-group">
+                <label for="InputEmailDemoForm">Email</label>
+                <input type="email" class="form-control" id="InputEmailDemoForm">
+              </div>
+              <div class="form-group">
+                <label for="InputPhoneDemoForm">Téléphone</label>
+                <input type="password" class="form-control" id="InputPhoneDemoForm">
+              </div>
+              <button type="submit" class="btn btn-info">DEMANDER UNE DEMO</button>
+            </form>
+            </section>
+
+        </main>
+
+        <footer>
+          <div class="footer">
+            <img class="logo" src="/images/logo_facebook.jpg" alt="Logo Beauté Recrutement">
+            <div class="menu">
+              <ul class="menu__list">
+                <li class="menu__item">
+                  <!-- TODO LIENS -->
+                    <a class="menu__link" href="">Accueil</a>
+                </li>
+                <li class="menu__item">
+                    <a class="menu__link" href="">Tarifs</a>
+                </li>
+                <li class="menu__item">
+                    <a class="menu__link" href="">Contact</a>
+                </li>
+              </ul>
+            </div>
+            <div class="button">
+              <ul class="button__list">
+                <!-- TODO LIENS-->
+                <li class="button__item"><a class="button__link-connexion btn btn-primary" href="../integration/login.html" role="button">CONNEXION</a></li>
+                <li class="button__item"><a class="button__link-demo btn btn-info" href="TODO lien vers la page de demonstration" role="button">DEMANDER UNE DEMO</a></li>
+              </ul>
+            </div>
+            <div class="social">
+              <ul class="social__list">
+                <li class="social__item">
+                    <a class="social__link" href="">
+                        <img class="social__icon" src="/images/linkedin-icon.png" alt="LinkedIn Beauté Recrutement">
+                    </a>
+                </li>
+                <li class="social__item">
+                    <a class="social__link" href="">
+                        <img class="social__icon" src="/images/facebook-icon.png" alt="Facebook Beauté Recrutement">
+                    </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </footer>
+
+    <script src="./js/main.js"></script>
+</body>
+</html>
