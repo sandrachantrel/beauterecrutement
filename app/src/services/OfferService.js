@@ -5,7 +5,7 @@ let OfferService = {
     let offerRequest = ApiClient.get("/wp/v2/offers");
 
     return offerRequest;
-  }
+  },
 };
 
 export default OfferService;
