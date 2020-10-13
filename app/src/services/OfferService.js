@@ -1,13 +1,11 @@
 import ApiClient from "@/services/ApiClient.js";
 
 let OfferService = {
-    list() {
-        let offerRequest = ApiClient.get(
-            "/wp/v2/offers"
-        );
+  list() {
+    let offerRequest = ApiClient.get("/wp/v2/offers");
 
-        return offerRequest;
-    }
+    return offerRequest;
+  }
 };
 
 export default OfferService;

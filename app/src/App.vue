@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <HeaderLayout />
-     <main class="main-container">
-    <!-- Je définis l'emplacement de l'affichage des views gérées par le router de vue.js -->
-    <RouterView />
+    <main class="main-container">
+      <!-- Je définis l'emplacement de l'affichage des views gérées par le router de vue.js -->
+      <RouterView />
     </main>
     <FooterLayout />
   </div>
@@ -20,7 +20,7 @@ export default {
   components: {
     HeaderLayout,
     FooterLayout
-  },
+  }
 };
 </script>
 

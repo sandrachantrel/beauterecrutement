@@ -1,37 +1,54 @@
 <template>
   <footer>
     <div class="footer">
-      <RouterLink v-bind:to="{name: 'Home' }" >
+      <RouterLink v-bind:to="{ name: 'Home' }">
         <img
           class="logo-footer"
           src="@/assets/logo_facebook.jpg"
           alt="Logo Beauté Recrutement"
         />
       </RouterLink>
-      <RouterLink tag="aRouter" 
-      exact :style="{ cursor: 'pointer'}" 
-      v-bind:to="{name: 'Home' }">
-      Accueil
+      <RouterLink
+        tag="aRouter"
+        exact
+        :style="{ cursor: 'pointer' }"
+        v-bind:to="{ name: 'Home' }"
+      >
+        Accueil
       </RouterLink>
-      <RouterLink tag="aRouter" 
-      exact :style="{ cursor: 'pointer'}" 
-      v-bind:to="{name: 'Offres' }">
-      Offres
+      <RouterLink
+        tag="aRouter"
+        exact
+        :style="{ cursor: 'pointer' }"
+        v-bind:to="{ name: 'Offres' }"
+      >
+        Offres
       </RouterLink>
 
-      <RouterLink tag="buttonconnexion" 
-      exact :style="{ cursor: 'pointer'}" 
-      v-bind:to="{name: 'Login' }">
-      Connexion</RouterLink>
-      <RouterLink tag="buttondemo" 
-      exact :style="{ cursor: 'pointer'}" 
-      v-bind:to="{name: 'Demo' }">
-      Demande de démo</RouterLink>
+      <RouterLink
+        tag="buttonconnexion"
+        exact
+        :style="{ cursor: 'pointer' }"
+        v-bind:to="{ name: 'Login' }"
+      >
+        Connexion</RouterLink
+      >
+      <RouterLink
+        tag="buttondemo"
+        exact
+        :style="{ cursor: 'pointer' }"
+        v-bind:to="{ name: 'Demo' }"
+      >
+        Demande de démo</RouterLink
+      >
 
       <div class="social">
         <ul class="social-list">
           <li class="social-item">
-            <a class="social-link" href="https://fr.linkedin.com/company/beaut%C3%A9-recrutement">
+            <a
+              class="social-link"
+              href="https://fr.linkedin.com/company/beaut%C3%A9-recrutement"
+            >
               <img
                 class="social-icon"
                 src="@/assets/linkedin-icon.png"
@@ -40,7 +57,10 @@
             </a>
           </li>
           <li class="social-item">
-            <a class="social-link" href="https://www.facebook.com/beauterecrutement/">
+            <a
+              class="social-link"
+              href="https://www.facebook.com/beauterecrutement/"
+            >
               <img
                 class="social-icon"
                 src="@/assets/facebook-icon.png"
@@ -82,7 +102,7 @@ export default {
     width: 50px;
     height: 50px;
     border-radius: 3rem;
-    padding:1rem;
+    padding: 1rem;
   }
 
   // Menu

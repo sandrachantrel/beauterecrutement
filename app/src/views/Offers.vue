@@ -1,5 +1,5 @@
 <template>
-    <OfferList />
+  <OfferList />
 </template>
 
 <script>

@@ -6,18 +6,25 @@
         >Logiciel RH pour les entreprises du Bien-Être et de la Beauté</span
       >
     </section>
-    
+
     <div class="button-list">
-      <RouterLink tag="buttonconnexion" 
-      exact :style="{ cursor: 'pointer'}" 
-      v-bind:to="{name: 'Login' }">
-      Connexion</RouterLink>
-      <RouterLink tag="buttondemo" 
-      exact :style="{ cursor: 'pointer'}" 
-      v-bind:to="{name: 'Demo' }">
-      Demande de démo</RouterLink>
+      <RouterLink
+        tag="buttonconnexion"
+        exact
+        :style="{ cursor: 'pointer' }"
+        v-bind:to="{ name: 'Login' }"
+      >
+        Connexion</RouterLink
+      >
+      <RouterLink
+        tag="buttondemo"
+        exact
+        :style="{ cursor: 'pointer' }"
+        v-bind:to="{ name: 'Demo' }"
+      >
+        Demande de démo</RouterLink
+      >
     </div>
-    
 
     <section class="presentation">
       <p class="presentation-content">
@@ -123,7 +130,5 @@ export default {
   .presentation {
     margin: 2rem;
   }
-
-  
 }
 </style>

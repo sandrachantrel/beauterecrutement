@@ -10,9 +10,8 @@
         <h2>{{ title }}</h2>
         <!-- v-html permet d'interpreter le code html pour éviter l'affichage des balises-->
         <div v-if="excerpt" v-html="excerpt"></div>
-        <div>Type de contrat: {{  }}</div>
-        <div>Localisation: {{  }}</div>
-
+        <div>Type de contrat: {{}}</div>
+        <div>Localisation: {{}}</div>
       </div>
     </a>
   </article>
@@ -55,7 +54,7 @@ export default {
     getImage() {
       // Je recupére seulement les infos de l'image s'il y a une image sinon je ne fait pas
       if (this.imageId) {
-        // Requete http pour recuperer les infos de l'image 
+        // Requete http pour recuperer les infos de l'image
         let imageRequest = MediaService.get(this.imageId);
 
         imageRequest.then(response => {
@@ -69,7 +68,7 @@ export default {
     }
   },
   created() {
-    // A la création de l'instance du composant je récupére les infos de l'image 
+    // A la création de l'instance du composant je récupére les infos de l'image
     this.getImage();
   }
 };

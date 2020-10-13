@@ -7,9 +7,11 @@
         alt="Logo Beauté Recrutement"
       />
       <nav class="menu">
-        <RouterLink tag="a" v-bind:to="{name: 'Home' }">Accueil</RouterLink>
-        <RouterLink tag="a" v-bind:to="{name: 'Offres' }">Offres</RouterLink>
-        <RouterLink tag="a" v-bind:to="{name: 'Login' }">Espace Recruteur</RouterLink>
+        <RouterLink tag="a" v-bind:to="{ name: 'Home' }">Accueil</RouterLink>
+        <RouterLink tag="a" v-bind:to="{ name: 'Offres' }">Offres</RouterLink>
+        <RouterLink tag="a" v-bind:to="{ name: 'Login' }"
+          >Espace Recruteur</RouterLink
+        >
       </nav>
     </section>
   </header>
@@ -40,7 +42,7 @@ export default {
     display: flex;
     justify-content: center;
   }
-  
+
   a {
     text-decoration: none;
     text-transform: uppercase;
