@@ -89,29 +89,20 @@ export default {
 
 <style lang="scss">
 @import "@/scss/colors.scss";
+@import "@/scss/form.scss";
 
 // Footer
 
 .footer {
-  position: fixed;
-  width: 100%;
-  background-color: $mainBackgroundColor;
-  box-shadow: 0px 0px 5px rgba(20, 20, 20, 0.2);
-  bottom: 0;
+  
+  margin-top: 2rem;
 
   .nav {
-    align-items: center;
     display: flex;
+    align-items: center;
     justify-content: space-around;
-    padding: 1rem;
-
-    a {
-      font-weight: bold;
-      color: #2c3e50;
-      &.router-link-exact-active {
-        color: #42b983;
-      }
-    }
+    background-color: $mainBackgroundColor;
+    box-shadow: 0px 0px 10px rgba(20, 20, 20, 0.2);
 
     @media only screen and (max-width: 767px) {
       height: 230px;
@@ -122,12 +113,7 @@ export default {
 
   // Logo
 
-  .logo-footer {
-    width: 50px;
-    height: 50px;
-    border-radius: 3rem;
-    padding: 1rem;
-  }
+  
 
   // Social
 

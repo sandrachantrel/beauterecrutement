@@ -1,30 +1,27 @@
 <template>
   <main class="main">
-    <section class="content">
-      <span class="first-part">Et si le recrutement commençait ici?</span>
-      <span class="second-part"
-        >Logiciel RH pour les entreprises du Bien-Être et de la Beauté</span
-      >
-    </section>
 
     <div class="button-list">
       <RouterLink
+        class="button button-connexion"
         v-if="!isConnected"
-        exact
-        :style="{ cursor: 'pointer' }"
         v-bind:to="{ name: 'Login' }"
       >
         Connexion</RouterLink
       >
       <RouterLink
+        class="button button-demonstration"
         v-if="!isConnected"
-        exact
-        :style="{ cursor: 'pointer' }"
         v-bind:to="{ name: 'Demo' }"
       >
         Demande de démo</RouterLink
       >
     </div>
+
+    <section class="content">
+      <span class="first-part">Et si le recrutement commençait ici?</span>
+      <span class="second-part">Logiciel RH pour les entreprises du Bien-Être et de la Beauté</span>
+    </section>
 
     <section class="presentation">
       <p class="presentation-content">
@@ -81,61 +78,39 @@ export default {
 
 <style lang="scss">
 @import "@/scss/colors.scss";
-
-// Main
+@import "@/scss/form.scss";
 
 .main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  // Slogan
-
-  .content {
-    display: flex;
-    flex-direction: column;
-    font-size: 130%;
-    text-align: center;
-    margin: 1.5rem;
-  }
-  .first-part,
-  .second-part {
-    padding: 0.5rem;
-  }
-
-  // Boutons
+  margin: 2rem;
 
   .button-list {
-    font-size: 100%;
-    font-family: "Montserrat Bold", Arial;
-    list-style-type: none;
-    display: flex;
-    padding: 0;
+    margin: 1rem;
   }
 
-  buttonconnexion {
+  .button {
     text-decoration: none;
     color: $color-text-secondary;
+    border: none;
+    border-radius: 0.2rem;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    cursor: pointer;
+  }
+
+  .button-connexion {
     background-color: $color-button-connexion;
-    border: none;
-    border-radius: 0.2rem;
-    padding: 0.5rem;
-    margin: 0.5rem;
   }
-  buttondemo {
-    text-decoration: none;
-    color: $color-text-secondary;
+
+  .button-demonstration {
     background-color: $color-button-demo;
-    border: none;
-    border-radius: 0.2rem;
-    padding: 0.5rem;
-    margin: 0.5rem;
   }
 
-  // Contenu
+  a {
+    margin: 1rem;
+  }
 
-  .presentation {
-    margin: 2rem;
+  .content, .presentation {
+    margin: 1rem;
   }
 }
 </style>

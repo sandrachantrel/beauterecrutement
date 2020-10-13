@@ -9,21 +9,20 @@
     </div>
     <!-- J'utilise isConnected qui est disponible dans mon code grâce à mapGetters  -->
     <div class="nav-container" v-if="!isConnected">
-      <div class="user-actions" v-show="showUserMenu">
-        <a v-bind:to="{ name: 'Home' }">Accueil</a>
-        <a v-bind:to="{ name: 'Offres' }">Offres</a>
-        <a v-bind:to="{ name: 'Login' }">Espace Recruteur</a>
-      </div>
+      <nav class="nav"> 
+        <RouterLink v-bind:to="{ name: 'Home' }">Accueil</RouterLink>
+        <RouterLink v-bind:to="{ name: 'Offres' }">Offres</RouterLink>
+      </nav>
     </div>
     <!-- J'affiche l'élément user selon la condition connecté-->
     <div class="user" v-if="isConnected">
+      <img class="avatar" src="@/assets/avatar.png" />
       <!-- J'ajoute un écouteur d'événement de type click -->
-      <span class="username" v-on:click="toggleUserMenu()">{{ user.displayName }}</span>
-      <img class="avatar" src="" />
+      <span class="username" v-on:click="toggleUserMenu()">Bonjour {{ user.displayName }}</span>
       <!-- Avec, v-show, l'élément sera dans le DOM mais soit en display: none, soit en display: block selon la condition -->
       <div class="user-actions" v-show="showUserMenu">
-        <a v-bind:to="{ name: 'Home' }">Accueil</a>
-        <a v-bind:to="{ name: 'Offres' }">Offres</a>
+        <RouterLink v-bind:to="{ name: 'Home' }">Accueil</RouterLink>
+        <RouterLink v-bind:to="{ name: 'Offres' }">Offres</RouterLink>
         <a v-on:click.prevent="disconnect">Déconnexion</a>
       </div>
     </div>
@@ -65,46 +64,21 @@ export default {
 
 <style lang="scss">
 @import "@/scss/colors.scss";
+@import "@/scss/form.scss";
 
-.header {
-  // Logo
-
-  .logo-header {
-    width: 50%;
-    height: 50%;
-    margin: 0;
-    padding: 0;
-  }
-
-  // Menu
-
-  .menu {
-    display: flex;
-    justify-content: center;
-  }
-
-  a {
-    text-decoration: none;
-    text-transform: uppercase;
-    color: $color-primary;
-    font-size: 120%;
-    font-family: "Montserrat Bold", Arial;
-    padding: 0.2rem;
-    margin: 1rem;
-  }
-  a:hover {
-    background-color: rgba($color-primary, 0.5);
-    color: $color-text-primary;
-    transition: 0.4s;
-    border-radius: 0.5rem;
-  }
-
-  @media only screen and (max-width: 767px) {
-    .menu {
-      flex-direction: column;
-      text-align: center;
-      margin: 0rem;
+ 
+  .user {
+    text-align: center;
+    .username {
+      padding-right: 0.5rem;
+    }
+    .avatar {
+      vertical-align: middle;
+      display: inline-block;
+      height: 2rem;
+      width: 2rem;
+      border-radius: 50px;
     }
   }
-}
+
 </style>
