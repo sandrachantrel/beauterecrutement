@@ -22,6 +22,7 @@ export default {
     FooterLayout
   },
   created() {
+    // A la création du composant app on vient executer created si tocken n'est pas vide 
     this.$store.dispatch("reconnect");
   }
 };
