@@ -1,6 +1,4 @@
 <template>
-  <div class="loginForm">
-    <h1>Connexion</h1>
     <!-- J'ajoute un écouteur d'événement de type submit avec preventDefault -->
     <form v-on:submit.prevent="submit()">
       <fieldset>
@@ -8,7 +6,7 @@
           class="field"
           v-bind:class="{ 'field--error': errors.email.length !== 0 }"
         >
-          <label for="email" class="field__label">Adresse e-mail</label>
+          <label class="field__label">Adresse e-mail</label>
           <!-- J'associe mon champ email à ma data grace à v-model -->
           <input
             v-model="email"
@@ -16,7 +14,7 @@
             type="text"
             placeholder="Votre e-mail"
           />
-          <!-- avec v-if on verifie que s'il y a des choses dans l'imput on affiche le ul sinon on l'affiche pas -->
+          <!-- avec v-if on verifie s'il y a des choses dans l'imput alors on affiche le ul sinon on l'affiche pas -->
           <ul class="field__error-list" v-if="errors.email.length">
             <li v-for="(error, index) in errors.email" v-bind:key="index">
               {{ error }}
@@ -27,7 +25,7 @@
           class="field"
           v-bind:class="{ 'field--error': errors.password.length !== 0 }"
         >
-          <label for="password" class="field__label">Mot de passe</label>
+          <label class="field__label">Mot de passe</label>
           <input
             v-model="password"
             class="field__input"
@@ -41,14 +39,13 @@
           </ul>
         </div>
       </fieldset>
+
+      <div v-if="apiError" class="alert error">{{ apiError }}</div>
       <button class="button">Connexion</button>
     </form>
-  </div>
 </template>
 
 <script>
-import TokenService from "@/services/TokenService.js";
-
 export default {
   name: "LoginForm",
   // création de mes datas qui vont etre liées à mes champs avec v-model
@@ -59,17 +56,36 @@ export default {
       errors: {
         email: [],
         password: []
-      }
+      },
+      apiError: ""
     };
   },
   methods: {
     submit() {
+      // Je remets les erreurs à vide
+      this.apiError = "";
+
       let isValide = this.validate();
 
       if (isValide) {
-        let tokenRequest = TokenService.get(this.email, this.password);
+        // J'appel l'action connect de mon store grâce à dispatch
+        // Recuperation de la promesse dans le loginForm comme quoi l'user est bien connecté  
+        let connectRequest = this.$store.dispatch(
+          "connect", {
+            email: this.email,
+            password: this.password
+          });
 
-        console.log(tokenRequest);
+          // Ce then gère les intéraction de la view
+          connectRequest.then(response => {
+            // Si la réponse est un succès
+            if ( response.data.success) {
+              // Je redirige vers la page d'accueil
+              this.$router.push({ name: "Home" });
+            } else {
+              this.apiError = response.data.message;
+            }
+          });
       }
     },
 
@@ -89,7 +105,7 @@ export default {
       if (this.email.length === 0) {
         isValide = false;
         this.errors.email.push("Merci de renseigner votre email.");
-        // J test que l'email est valide
+        // Je test que l'email est valide
       } else if (!emailRegex.test(this.email)) {
         isValide = false;
         this.errors.email.push("L'email n'est pas valide.");

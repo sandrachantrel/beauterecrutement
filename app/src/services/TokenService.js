@@ -11,7 +11,7 @@ const TokenService = {
     return tokenRequest;
   },
 
-  Validate(token) {
+  validate(token) {
     let validateTokenRequest = ApiClient.post(
       "/jwt-auth/v1/token/validate",
       null,

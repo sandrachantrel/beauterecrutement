@@ -9,7 +9,7 @@
 
     <div class="button-list">
       <RouterLink
-        tag="buttonconnexion"
+        v-if="!isConnected"
         exact
         :style="{ cursor: 'pointer' }"
         v-bind:to="{ name: 'Login' }"
@@ -17,7 +17,7 @@
         Connexion</RouterLink
       >
       <RouterLink
-        tag="buttondemo"
+        v-if="!isConnected"
         exact
         :style="{ cursor: 'pointer' }"
         v-bind:to="{ name: 'Demo' }"
@@ -67,8 +67,15 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+
 export default {
-  name: "FotterLayout"
+  name: "FotterLayout",
+  computed: {
+    ...mapGetters([
+      "isConnected"
+    ])
+  },
 };
 </script>
 

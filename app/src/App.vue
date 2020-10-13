@@ -20,6 +20,9 @@ export default {
   components: {
     HeaderLayout,
     FooterLayout
+  },
+  created() {
+    this.$store.dispatch("reconnect");
   }
 };
 </script>

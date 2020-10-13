@@ -1,7 +1,9 @@
 <template>
-  <footer>
-    <div class="footer">
-      <RouterLink v-bind:to="{ name: 'Home' }">
+  <footer class="footer">
+    <nav class="nav">
+      <!-- J'utilise le reverse routing du router de vue.js pour géérer des URLs -->
+      <RouterLink 
+        v-bind:to="{ name: 'Home' }">
         <img
           class="logo-footer"
           src="@/assets/logo_facebook.jpg"
@@ -9,7 +11,6 @@
         />
       </RouterLink>
       <RouterLink
-        tag="aRouter"
         exact
         :style="{ cursor: 'pointer' }"
         v-bind:to="{ name: 'Home' }"
@@ -17,7 +18,6 @@
         Accueil
       </RouterLink>
       <RouterLink
-        tag="aRouter"
         exact
         :style="{ cursor: 'pointer' }"
         v-bind:to="{ name: 'Offres' }"
@@ -26,7 +26,7 @@
       </RouterLink>
 
       <RouterLink
-        tag="buttonconnexion"
+        v-if="!isConnected"
         exact
         :style="{ cursor: 'pointer' }"
         v-bind:to="{ name: 'Login' }"
@@ -34,7 +34,7 @@
         Connexion</RouterLink
       >
       <RouterLink
-        tag="buttondemo"
+        v-if="!isConnected"
         exact
         :style="{ cursor: 'pointer' }"
         v-bind:to="{ name: 'Demo' }"
@@ -70,18 +70,20 @@
           </li>
         </ul>
       </div>
-    </div>
+    </nav>
   </footer>
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+
 export default {
   name: "FotterLayout",
-  data() {
-    return {
-      menuItems: ["Accueil", "Tarifs", "Contact"]
-    };
-  }
+  computed: {
+    ...mapGetters([
+      "isConnected"
+    ])
+  },
 };
 </script>
 
@@ -91,10 +93,32 @@ export default {
 // Footer
 
 .footer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 2rem;
+  position: fixed;
+  width: 100%;
+  background-color: $mainBackgroundColor;
+  box-shadow: 0px 0px 5px rgba(20, 20, 20, 0.2);
+  bottom: 0;
+
+  .nav {
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem;
+
+    a {
+      font-weight: bold;
+      color: #2c3e50;
+      &.router-link-exact-active {
+        color: #42b983;
+      }
+    }
+
+    @media only screen and (max-width: 767px) {
+      height: 230px;
+      flex-direction: column;
+      text-align: center;
+    }
+  }
 
   // Logo
 
@@ -103,53 +127,6 @@ export default {
     height: 50px;
     border-radius: 3rem;
     padding: 1rem;
-  }
-
-  // Menu
-
-  aRouter {
-    text-decoration: none;
-    text-transform: uppercase;
-    color: $color-primary;
-    padding: 0.2rem;
-    margin: 0.2rem;
-    font-size: 90%;
-    font-family: "Montserrat Bold", Arial;
-  }
-  aRouter:hover {
-    background-color: rgba($color-primary, 0.5);
-    color: $color-text-primary;
-    transition: 0.4s;
-    border-radius: 0.5rem;
-  }
-
-  @media only screen and (max-width: 767px) {
-    .menu-list {
-      height: 230px;
-      flex-direction: column;
-      text-align: center;
-    }
-  }
-
-  // Boutons
-
-  buttonconnexion {
-    text-decoration: none;
-    color: $color-text-secondary;
-    background-color: $color-button-connexion;
-    border: none;
-    border-radius: 0.2rem;
-    padding: 0.5rem;
-    margin: 0.5rem;
-  }
-  buttondemo {
-    text-decoration: none;
-    color: $color-text-secondary;
-    background-color: $color-button-demo;
-    border: none;
-    border-radius: 0.2rem;
-    padding: 0.5rem;
-    margin: 0.5rem;
   }
 
   // Social

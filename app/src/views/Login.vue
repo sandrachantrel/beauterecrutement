@@ -1,5 +1,8 @@
 <template>
-  <LoginForm />
+  <div>
+    <h1>Connexion</h1>
+    <LoginForm />
+  </div>
 </template>
 
 <script>
