@@ -10,20 +10,6 @@
           alt="Logo Beauté Recrutement"
         />
       </RouterLink>
-      <RouterLink
-        exact
-        :style="{ cursor: 'pointer' }"
-        v-bind:to="{ name: 'Home' }"
-      >
-        Accueil
-      </RouterLink>
-      <RouterLink
-        exact
-        :style="{ cursor: 'pointer' }"
-        v-bind:to="{ name: 'Offres' }"
-      >
-        Offres
-      </RouterLink>
 
       <RouterLink
         v-if="!isConnected"
@@ -41,6 +27,9 @@
       >
         Demande de démo</RouterLink
       >
+      <div class="user" v-if="isConnected">
+        <a v-on:click.prevent="disconnect">Déconnexion</a>
+      </div>
 
       <div class="social">
         <ul class="social-list">
@@ -103,6 +92,13 @@ export default {
       "isConnected"
     ])
   },
+   methods: {
+    disconnect() {
+      // dispatch permet d'executer une action en dehors du store 
+      //J'execute l'action disconnect du store
+      this.$store.dispatch("disconnect");
+    }
+   }
 };
 </script>
 

@@ -7,33 +7,28 @@
         alt="Logo Beauté Recrutement"
       />
     </div>
+    <MenuLayout/>
     <!-- J'utilise isConnected qui est disponible dans mon code grâce à mapGetters  -->
-    <div class="nav-container" v-if="!isConnected">
-      <nav class="nav"> 
-        <RouterLink v-bind:to="{ name: 'Home' }">Accueil</RouterLink>
-        <RouterLink v-bind:to="{ name: 'Offres' }">Offres</RouterLink>
-      </nav>
-    </div>
     <!-- J'affiche l'élément user selon la condition connecté-->
     <div class="user" v-if="isConnected">
       <img class="avatar" src="@/assets/avatar.png" />
       <!-- J'ajoute un écouteur d'événement de type click -->
       <span class="username" v-on:click="toggleUserMenu()">Bonjour {{ user.displayName }}</span>
-      <!-- Avec, v-show, l'élément sera dans le DOM mais soit en display: none, soit en display: block selon la condition -->
-      <div class="user-actions" v-show="showUserMenu">
-        <RouterLink v-bind:to="{ name: 'Home' }">Accueil</RouterLink>
-        <RouterLink v-bind:to="{ name: 'Offres' }">Offres</RouterLink>
-        <a v-on:click.prevent="disconnect">Déconnexion</a>
-      </div>
     </div>
   </header>
 </template>
 
 <script>
+import MenuLayout from "@/components/MenuLayout.vue";
+
 import { mapGetters } from "vuex";
 
 export default {
   name: "HeaderLayout",
+
+  components: {
+    MenuLayout
+  },
   // Je stock des données avec la méthode data qui doit retourner un objet
   data() {
     return {
@@ -65,12 +60,15 @@ export default {
 <style lang="scss">
 @import "@/scss/colors.scss";
 @import "@/scss/form.scss";
+@import "@/scss/menu.scss";
 
  
   .user {
     text-align: center;
     .username {
       padding-right: 0.5rem;
+      text-transform: uppercase;
+      color: $color-primary;
     }
     .avatar {
       vertical-align: middle;
@@ -78,6 +76,7 @@ export default {
       height: 2rem;
       width: 2rem;
       border-radius: 50px;
+      margin: 2rem;
     }
   }
 

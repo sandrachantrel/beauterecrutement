@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Connexion</h1>
+    <h2>Connexion</h2>
     <LoginForm />
   </div>
 </template>
@@ -15,3 +15,8 @@ export default {
   }
 };
 </script>
+
+<style lang="scss">
+ @import "@/scss/form.scss";
+ @import "@/scss/colors.scss";
+</style>

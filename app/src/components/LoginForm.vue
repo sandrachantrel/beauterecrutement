@@ -123,4 +123,22 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss">
+.field {
+  padding: 1rem;
+  &__label {
+    padding: 1rem;
+  }
+  &__imput {
+    padding: 2rem;
+  }
+}
+
+.button {
+    font-size: 15px;
+    text-transform: uppercase;
+    margin: 1rem;
+    padding: 0.5rem;
+  }
+
+</style>
