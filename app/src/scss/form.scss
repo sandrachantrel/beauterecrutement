@@ -9,14 +9,13 @@ a {
     color: #b94266;
     padding: 1rem;
     }
+    &:hover {
+      background-color: rgba($color-primary, 0.5);
+      color: $color-text-primary;
+      transition: 0.4s;
+      border-radius: 0.5rem;
+    }
 }
-
-a:hover {
-    background-color: rgba($color-primary, 0.5);
-    color: $color-text-primary;
-    transition: 0.4s;
-    border-radius: 0.5rem;
-  }
 
   // Logo 
 

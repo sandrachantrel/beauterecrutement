@@ -107,5 +107,8 @@ export default {
 
 h1 {
   text-align: center;
+  text-transform: uppercase;
+  font-weight: bold, ;
+  margin: 2rem;
 }
 </style>

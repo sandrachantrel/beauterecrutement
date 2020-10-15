@@ -70,6 +70,25 @@
           </li>
         </ul>
       </div>
+      <!-- popin newsletter -->
+      <!--
+      <div class="ppshader">
+        <div class="popin">
+          <p class="popin__title">Restons en contact !</p>
+          <form action="brNewsletter.php" method="post">
+            <div class="popin__input">
+              <label for="email">Mon email</label> <input type="email" name="email" id="email">
+            </div>
+            <div class="popin__input">
+              <label for="optin_partners">Je m'inscris aux newsletters de mes partenaires</label> <input type="checkbox" name="optin" id="optin">
+            </div>
+            <input type="hidden" name="brNewsletter_popin_submit" value="1">
+            <input type="submit" value="Je ne suis pas interessé(e)">
+            <input type="submit" name="optin_general" value="Je m'inscrit à la newsletter">
+          </form>
+        </div>
+      </div>
+      -->
     </nav>
   </footer>
 </template>
@@ -111,10 +130,6 @@ export default {
     }
   }
 
-  // Logo
-
-  
-
   // Social
 
   .social-list {
@@ -128,5 +143,35 @@ export default {
     height: 30px;
     margin: 0.5rem;
   }
+
+  // popin
+
+  .ppshader {
+  position: fixed;
+  top:0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.44);
+  z-index: 99990;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popin {
+  background-color: #6a9ee2;
+  border: 1px solid white;
+  padding: 3em;
+}
+
+.popin__title {
+  margin-bottom: 1.5em;
+  text-align: center;
+}
+
+.popin__input {
+  margin-bottom: 0.75em;
+}
 }
 </style>

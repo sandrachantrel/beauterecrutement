@@ -1,6 +1,6 @@
 <template>
   <article class="offer">
-    <a href="javascript:void(0)" v-bind:title="title">
+    <!--<a href="javascript:void(0)" v-bind:title="title">-->
       <div
         v-if="image"
         class="media-image"
@@ -10,10 +10,11 @@
         <h2>{{ title }}</h2>
         <!-- v-html permet d'interpreter le code html pour éviter l'affichage des balises-->
         <div v-if="excerpt" v-html="excerpt"></div>
+        <!-- 
         <div>Type de contrat: {{}}</div>
-        <div>Localisation: {{}}</div>
+        <div>Localisation: {{}}</div> -->
       </div>
-    </a>
+    <!--</a>-->
   </article>
 </template>
 
@@ -80,6 +81,16 @@ export default {
 
 .offer {
   text-align: center;
+  width: 50%;
+  margin: 2rem auto 2rem auto;
+  
+  .text-content {
+    border: 0.5px solid $color-background;
+    border-radius: $cardBorderRadius;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    padding-bottom: 1rem;
+  }
 
   a {
     color: $color-text-primary;
@@ -92,9 +103,17 @@ export default {
     background-size: cover;
     display: block;
     margin: auto;
+    border: 0.5px solid $color-background;
+    border-bottom: 0;
     border-radius: $cardBorderRadius;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
+  }
+
+  h2 {
+    margin: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
   }
 }
 </style>
